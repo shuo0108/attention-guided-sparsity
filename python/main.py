@@ -34,11 +34,10 @@ if __name__ == '__main__':
     parser.add_argument('--dropout', type=float, default=0.8,
                         help='Keep probability for training dropout.')
     parser.add_argument('--data_dir', type=str,
-       default=os.path.join(os.getenv('TEST_TMPDIR', '/tmp'),'tensorflow/mnist/input_data'),
+       default='/home/hs/tensorflow_study/mnist/mnist_hs/MNIST_data',
        help='Directory for storing input data')
     parser.add_argument('--log_dir',type=str,
-        default=os.path.join(os.getenv('TEST_TMPDIR', '/tmp'),
-        'tensorflow/mnist/logs/mnist_sparsity'),help='Summaries log directory')
+        default='log',help='Summaries log directory')
 
     FLAGS, unparsed = parser.parse_known_args()
     tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
